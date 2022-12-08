@@ -1,0 +1,37 @@
+.logo-container {
+  width: 400px;
+  height: 550px;
+  //   background-color: white;
+  position: absolute;
+  right: 15%;
+  top: 10%;
+
+  left: auto;
+  margin: auto;
+
+  svg {
+    width: 95%;
+    height: auto;
+    bottom: 0;
+    transform: rotateZ(10deg) !important;
+  }
+}
+
+#pSvg path {
+  stroke: #ff9671;
+  stroke-width: 1px;
+  stroke-dasharray: 373px;
+  stroke-dashoffset: 373px;
+  animation: pLineAnime 3s ease forwards, fillUp 1s 2.8s ease forwards;
+}
+@keyframes pLineAnime {
+  to {
+    stroke-dashoffset: 0px;
+    fill: transparent;
+  }
+}
+@keyframes fillUp {
+  to {
+    fill: #ff9671;
+  }
+}
