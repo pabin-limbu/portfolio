@@ -4,6 +4,7 @@ import AnimatedLetters from "../UItemplate/AnimatedLetters";
 import "./index.scss";
 import Logo from "./Logo";
 import Loader from "react-loaders";
+import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 function Home() {
   const [letterClass, setLetterClass] = useState("text-animate");
   const nameArray = ["p", "a", "b", "i", "n", "  ", "l", "i", "m", "b", "u"];
@@ -69,6 +70,23 @@ function Home() {
             CONTACT ME
           </Link>
         </div> */}
+        <div className="social-link">
+          <ul>
+            <li>
+              <a target="_blank" href="https://www.facebook.com/changsu.pabin">
+                <FaFacebookSquare color="white" />
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/pabin-limbu-b47ab4212"
+              >
+                <FaLinkedin color="white" />
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="loader-logo">
         <Logo />

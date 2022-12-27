@@ -39,7 +39,7 @@ function Sidebar() {
         </NavLink>
       </nav>
 
-      <ul>
+      {/* <ul>
         <li>
           <a target="_blank" href="https://www.facebook.com/changsu.pabin">
             <FaFacebookSquare color="white" />
@@ -53,7 +53,7 @@ function Sidebar() {
             <FaLinkedin color="white" />
           </a>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 }

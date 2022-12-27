@@ -1,24 +1,29 @@
 .contact-page {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    width: 35%;
-    vertical-align: middle;
-    display: table-cell;
-    max-height: 90%;
-    transform: translateY(-50%);
+    // position: relative;
+    // left: 10%;
+    // top: 50%;
+    // width: 35%;
+    // vertical-align: middle;
+    // display: table-cell;
+    // max-height: 90%;
+    // transform: translateY(-50%);
 
     h1 {
-      font-size: 53px;
+      font-size: 20px;
       color: white;
       font-weight: 400;
       margin-top: 0;
       position: relative;
-      margin-bottom: 40px;
+      // margin-bottom: 40px;
+      text-align: center;
       left: 10px;
     }
     p {
@@ -38,6 +43,16 @@
 .contact-form {
   width: 100%;
   margin-top: 20px;
+  form {
+    padding: 0 10px 0 10px;
+    legend {
+      color: white;
+      padding-bottom: 10px;
+      text-align: center;
+      // opacity: 0;
+      // animation: fadeInUp 2s 2.5s;
+    }
+  }
   ul {
     padding: 0;
     margin: 0;
@@ -104,39 +119,50 @@
     float: right;
     border-radius: 0px;
     &:hover {
-      background-color: #0067D2;
+      background-color: #0067d2;
     }
   }
 }
 .info-map {
+  // position: absolute;
+  // background-color: #000;
+  // top: 50px;
+  // right: 0px;
+  // z-index: 999;
+  // width: 267px;
+  // padding: 20px;
+  // color: #fff;
+  // font-family: "Helvetica";
+  // font-size: 17px;
+  // font-weight: 300;
+  // opacity: 0;
+  // animation: fadeIn 1.5s 1.5s;
+  // animation-fill-mode: forwards;
   position: absolute;
-  background-color: #000;
-  top: 50px;
-  right: 0px;
+  background-color: rgba(53, 50, 50, 0.6);
+  top: 10px;
+  right: 10px;
   z-index: 999;
-  width: 267px;
-  padding: 20px;
-  color: #fff;
-  font-family: "Helvetica";
-  font-size: 17px;
-  font-weight: 300;
-  opacity:0;
-  animation: fadeIn 1.5s 1.5s;
-  animation-fill-mode: forwards;
+  color: white;
+  text-align: center;
+  padding: 10px;
 
   span {
-    font-size: 16px;
+    font-size: 10px;
     display: block;
     padding-top: 20px;
     color: #ffd700;
   }
 }
 .map-wrap {
-  background: rgba(8, 253, 216, 0.1);
-  float: right;
-  width: 49%;
-  height: 100%;
-  overflow: hidden;
+  // background: rgba(8, 253, 216, 0.1);
+  // float: right;
+  // width: 49%;
+  // height: 100%;
+  // overflow: hidden;
+  position: relative;
+  padding: 10px;
+  height: 180px;
 }
 
 .leaflet-container {
