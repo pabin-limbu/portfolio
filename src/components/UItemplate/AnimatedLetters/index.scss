@@ -1,18 +1,20 @@
 .text-animate {
   display: inline-block;
+  font-size: 1em;
   opacity: 1;
   animation: bounceIn 1s 1s;
   animation-fill-mode: forwards;
   min-width: 10px;
-  color: #FF9671;
+  color: #ff9671;
   text-transform: capitalize;
 }
 .text-animate-hover {
-  min-width: 10px;
-  display: inline-block;
-  animation-fill-mode: both;
-  color: #FF9671;
+  font-size: 1em;
+  color: #ff9671;
   text-transform: capitalize;
+  display: inline-block;
+  min-width: 10px;
+  animation-fill-mode: both;
   cursor: pointer;
 
   &:hover {

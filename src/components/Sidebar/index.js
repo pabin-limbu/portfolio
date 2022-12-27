@@ -10,6 +10,7 @@ function Sidebar() {
   return (
     <div className="nav-bar">
       <Link className="logo" to="/">
+        {/* <h1>P L</h1> */}
         <img id="logo_image" src={logo} alt="logo" />
       </Link>
 

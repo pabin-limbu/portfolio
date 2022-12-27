@@ -33,6 +33,7 @@ function About() {
               idx={15}
             />
           </h1>
+
           <p>
             Aspiring Full Stack Developer exploring Cloud Native Technologies
             and Framework to build and deliver high quality robust, reliable and

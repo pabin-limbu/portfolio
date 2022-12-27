@@ -1,37 +1,63 @@
 .logo-container {
-  width: 400px;
-  height: 550px;
-  //   background-color: white;
-  position: absolute;
-  right: 15%;
-  top: 10%;
+  // width: 400px;
+  // height: 550px;
+  // background-color: white;
+  // position: absolute;
+  // right: 15%;
+  // top: 10%;
 
-  left: auto;
-  margin: auto;
+  // left: auto;
+  // margin: auto;
+
+  position: relative;
+  // background-color: red;
+  width: 100%;
+  height: 100px;
+  z-index: 0;
 
   svg {
-    width: 95%;
-    height: auto;
-    bottom: 0;
-    transform: rotateZ(10deg) !important;
+    // background-color: wheat;
+    position: absolute;
+    width: 60%;
+    height: 400px;
+    bottom: 140%;
+    left: 25%;
+    z-index: 0;
+
+    // width: 95%;
+    // height: auto;
+    // bottom: 0;
+    // transform: rotateZ(10deg) !important;
   }
 }
 
 #pSvg path {
-  stroke: #ff9671;
+  // stroke: #ff9671;
+  stroke: white;
   stroke-width: 1px;
   stroke-dasharray: 373px;
   stroke-dashoffset: 373px;
-  animation: pLineAnime 3s ease forwards, fillUp 1s 2.8s ease forwards;
+  animation: pLineAnime 2.5s ease forwards, fillUp 1s 2.8s ease forwards;
 }
 @keyframes pLineAnime {
-  to {
+  // to {
+  //   stroke-dashoffset: 0px;
+  //   fill: transparent;
+  // }
+  0% {
+    stroke-dashoffset: 373px;
+  }
+  // 25%  {stroke-dashoffset: 200px;}
+  50% {
     stroke-dashoffset: 0px;
-    fill: transparent;
+  }
+  // 75%  {stroke-dashoffset: 200px;}
+  100% {
+    stroke-dashoffset: 373px;
   }
 }
 @keyframes fillUp {
   to {
-    fill: #ff9671;
+    // fill: #ff9671;
   }
 }

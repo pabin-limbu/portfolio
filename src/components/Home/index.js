@@ -6,7 +6,7 @@ import Logo from "./Logo";
 import Loader from "react-loaders";
 function Home() {
   const [letterClass, setLetterClass] = useState("text-animate");
-  const nameArray = ["p", "a", "b", "i", "n", " ", "l", "i", "m", "b", "u"];
+  const nameArray = ["p", "a", "b", "i", "n", "  ", "l", "i", "m", "b", "u"];
 
   useEffect(() => {
     setTimeout(() => {
@@ -17,7 +17,33 @@ function Home() {
   return (
     <>
       <div className="container home-page">
-        <div className="text-zone">
+        <div className="typography-zone">
+          <h1>
+            <span className={`${letterClass}`}>H</span>
+            <span className={`${letterClass} _12`}>E</span>
+            <span className={`${letterClass} _13`}>L</span>
+            <span className={`${letterClass} _14`}>L</span>
+            <span className={`${letterClass} _15`}>O</span>
+            <br />
+            <span className={`${letterClass} _16`}>I</span>
+            <span className={`${letterClass} _17`}>'M</span>
+            <br />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={nameArray}
+              idx={18}
+            />
+          </h1>
+          <h2>
+            Frontend developer / Backend developer / Javascript / React /
+            React-native
+          </h2>
+          <Link to="/contact" className="flat-button">
+            CONTACT ME
+          </Link>
+        </div>
+
+        {/* <div className="text-zone">
           <h1>
             <span className={`${letterClass}`}>H</span>
             <span className={`${letterClass} _12`}>E</span>
@@ -42,10 +68,13 @@ function Home() {
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
-        </div>
+        </div> */}
+      </div>
+      <div className="loader-logo">
         <Logo />
       </div>
-      <Loader type="line-scale" />
+      {/* <Loader type="line-scale" /> */}
+      {/* <Logo /> */}
     </>
   );
 }
