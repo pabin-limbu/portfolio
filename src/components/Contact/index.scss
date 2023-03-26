@@ -1,21 +1,11 @@
 .contact-page {
   width: 100%;
-  height: auto;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  padding: 10px;
 
   .text-zone {
-    // position: relative;
-    // left: 10%;
-    // top: 50%;
-    // width: 35%;
-    // vertical-align: middle;
-    // display: table-cell;
-    // max-height: 90%;
-    // transform: translateY(-50%);
     width: 100%;
+    height: 100%;
 
     h1 {
       font-size: 20px;
@@ -23,7 +13,6 @@
       font-weight: 400;
       margin-top: 0;
       position: relative;
-      // margin-bottom: 40px;
       text-align: center;
       left: 10px;
     }
@@ -43,15 +32,14 @@
 
 .contact-form {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
+  background: rgba(8, 253, 216, 0.1);
   form {
     padding: 0 10px 0 10px;
     legend {
       color: white;
       padding-bottom: 10px;
       text-align: center;
-      // opacity: 0;
-      // animation: fadeInUp 2s 2.5s;
     }
   }
   ul {
@@ -125,20 +113,6 @@
   }
 }
 .info-map {
-  // position: absolute;
-  // background-color: #000;
-  // top: 50px;
-  // right: 0px;
-  // z-index: 999;
-  // width: 267px;
-  // padding: 20px;
-  // color: #fff;
-  // font-family: "Helvetica";
-  // font-size: 17px;
-  // font-weight: 300;
-  // opacity: 0;
-  // animation: fadeIn 1.5s 1.5s;
-  // animation-fill-mode: forwards;
   position: absolute;
   background-color: rgba(53, 50, 50, 0.6);
   top: 10px;
@@ -156,11 +130,8 @@
   }
 }
 .map-wrap {
-  // background: rgba(8, 253, 216, 0.1);
-  // float: right;
-  // width: 49%;
-  // height: 100%;
-  // overflow: hidden;
+  background: rgba(8, 253, 216, 0.1);
+
   position: relative;
   padding: 10px;
   width: 100%;
@@ -175,4 +146,39 @@
   opacity: 0;
   animation: backInRight 1s 0.2s;
   animation-fill-mode: forwards;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .contact-page {
+    .mapWrapContainer {
+      display: flex;
+      height: 100%;
+    }
+    .map-wrap {
+      position: relative;
+      padding: 10px;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .contact-form {
+    margin-top: 0px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

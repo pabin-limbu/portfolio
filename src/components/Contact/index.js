@@ -49,62 +49,69 @@ function Contact() {
               letterClass={letterClass}
             />
           </h1>
-          <div className="map-wrap">
-            <MapContainer center={[22.304008, 114.168663]} zoom={20}>
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <Marker position={[22.304008, 114.168663]}>
-                <Popup>Pabin location</Popup>
-              </Marker>
-            </MapContainer>
-            <div className="info-map">
-              pabin limbu,
-              <br />
-              Hong kong
-              <br />
-              kwun chung street,
-              <span>changsu.pabin337@gmail.com</span>
+          <div className="mapWrapContainer">
+            <div className="map-wrap">
+              <MapContainer center={[22.304008, 114.168663]} zoom={20}>
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <Marker position={[22.304008, 114.168663]}>
+                  <Popup>Pabin location</Popup>
+                </Marker>
+              </MapContainer>
+              <div className="info-map">
+                pabin limbu,
+                <br />
+                Hong kong
+                <br />
+                kwun chung street,
+                <span>changsu.pabin337@gmail.com</span>
+              </div>
             </div>
-          </div>
 
-          <div className="contact-form">
-            <form ref={refForm} onSubmit={sendEmail}>
-              <legend>Send Email</legend>
-              <ul>
-                <li className="half">
-                  <input type="text" name="name" placeholder="name" required />
-                </li>
-                <li className="half">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="email"
-                    required
-                  />
-                </li>
-                <li>
-                  <input
-                    type="text"
-                    name="subject"
-                    placeholder="subject"
-                    required
-                  />
-                </li>
-                <li>
-                  <textarea
-                    name="message"
-                    id=""
-                    cols="30"
-                    rows="10"
-                    placeholder="subject"
-                    required
-                  ></textarea>
-                </li>
+            <div className="contact-form">
+              <form ref={refForm} onSubmit={sendEmail}>
+                <legend>Send Email</legend>
+                <ul>
+                  <li className="half">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="name"
+                      required
+                    />
+                  </li>
+                  <li className="half">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="email"
+                      required
+                    />
+                  </li>
+                  <li>
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="subject"
+                      required
+                    />
+                  </li>
+                  <li>
+                    <textarea
+                      name="message"
+                      id=""
+                      cols=""
+                      rows=""
+                      placeholder="Message"
+                      required
+                    ></textarea>
+                  </li>
 
-                <li>
-                  <input type="submit" className="flat-button" value="SEND" />
-                </li>
-              </ul>
-            </form>
+                  <li>
+                    <input type="submit" className="flat-button" value="SEND" />
+                  </li>
+                </ul>
+              </form>
+            </div>
           </div>
         </div>
 

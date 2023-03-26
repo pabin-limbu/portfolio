@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import { FaHome, FaUser, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { FaHome, FaUser, FaReact } from "react-icons/fa";
 import { MdContactPhone } from "react-icons/md";
 import "./index.scss";
 import logo from "../../Uploads/pabin_limbu.png";
@@ -37,23 +37,15 @@ function Sidebar() {
         >
           <MdContactPhone color="#FF9671" />
         </NavLink>
+        <NavLink
+          className={(navData) =>
+            navData.isActive ? "project-link active" : "project-link"
+          }
+          to="/projects"
+        >
+          <FaReact color="#FF9671" />
+        </NavLink>
       </nav>
-
-      {/* <ul>
-        <li>
-          <a target="_blank" href="https://www.facebook.com/changsu.pabin">
-            <FaFacebookSquare color="white" />
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/pabin-limbu-b47ab4212"
-          >
-            <FaLinkedin color="white" />
-          </a>
-        </li>
-      </ul> */}
     </div>
   );
 }

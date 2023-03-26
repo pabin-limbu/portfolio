@@ -44,36 +44,14 @@ function Home() {
           </Link>
         </div>
 
-        {/* <div className="text-zone">
-          <h1>
-            <span className={`${letterClass}`}>H</span>
-            <span className={`${letterClass} _12`}>E</span>
-            <span className={`${letterClass} _13`}>L</span>
-            <span className={`${letterClass} _14`}>L</span>
-            <span className={`${letterClass} _15`}>O</span>
-            <br />
-            <span className={`${letterClass} _16`}>I</span>
-            <span className={`${letterClass} _17`}>'M</span>
-            <br />
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={nameArray}
-              idx={18}
-            />
-          </h1>
-          <h2>
-            Frontend developer / Backend developer / Javascript / React /
-            React-native
-          </h2>
-
-          <Link to="/contact" className="flat-button">
-            CONTACT ME
-          </Link>
-        </div> */}
         <div className="social-link">
           <ul>
             <li>
-              <a target="_blank" href="https://www.facebook.com/changsu.pabin">
+              <a
+                target="_blank"
+                href="https://www.facebook.com/changsu.pabin"
+                rel="noreferrer"
+              >
                 <FaFacebookSquare color="white" />
               </a>
             </li>
@@ -81,6 +59,7 @@ function Home() {
               <a
                 target="_blank"
                 href="https://www.linkedin.com/in/pabin-limbu-b47ab4212"
+                rel="noreferrer"
               >
                 <FaLinkedin color="white" />
               </a>
@@ -91,8 +70,6 @@ function Home() {
       <div className="loader-logo">
         <Logo />
       </div>
-      {/* <Loader type="line-scale" /> */}
-      {/* <Logo /> */}
     </>
   );
 }

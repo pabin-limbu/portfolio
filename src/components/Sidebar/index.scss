@@ -72,7 +72,7 @@
 
         &::after {
           // opacity: 1;
-          opacity: 0;
+          opacity: 1;
         }
       }
 
@@ -82,7 +82,8 @@
         font-size: 12px;
         letter-spacing: 2px;
         position: absolute;
-        bottom: 0;
+        bottom: -25px;
+        right: 5px;
         display: block;
         width: 100%;
         text-align: center;
@@ -106,6 +107,11 @@
     a.contact-link {
       &:after {
         content: "contact";
+      }
+    }
+    a.project-link {
+      &:after {
+        content: "projects";
       }
     }
 
