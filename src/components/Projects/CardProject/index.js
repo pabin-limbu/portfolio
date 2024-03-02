@@ -24,7 +24,7 @@ function CardProject(props) {
             width={200}
             src={item.img}
             alt="projectImage"
-            className="logo"
+            className="Projectlogo"
           />
         </div>
         <div className="projectDetails">
