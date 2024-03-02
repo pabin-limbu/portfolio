@@ -6,7 +6,7 @@
       font-size: 53px;
       color: white;
       font-weight: 400;
-      margin-top: 0;
+      margin-top: 10px;
       margin-bottom: 40px;
       left: 10px;
     }
@@ -36,48 +36,3 @@
   width: 80%;
 }
 
-.item {
-  background: #55b4b0;
-  border-bottom: 1px solid Black;
-}
-.title {
-  padding: 5px 10px;
-  color: #dfcfbe;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-.title h2 {
-  text-transform: capitalize;
-  font-family: "Helvetica Neue";
-  letter-spacing: 0.1em;
-}
-.accordianIndicator {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.content {
-  background-color: #dfcfbe;
-  color: black;
-  padding-left: 5px;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0, 1, 0, 1);
-}
-.content.show {
-  height: auto;
-  max-height: 999px;
-  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
-  // animation-delay: 1s;
-}
-.content {
-  display: flex;
-}
-.projectDetails {
-  margin-left: 20px;
-}
-.projectDetails ul {
-}
-.projectDetails ul li {
-}

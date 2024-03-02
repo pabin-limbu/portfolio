@@ -6,7 +6,9 @@ import Loader from "react-loaders";
 import { useEffect } from "react";
 import CardProject from "./CardProject";
 import starWarLogo from "../../Uploads/starwar.jpg";
-import madiraImage from "../../Uploads/madira.jpg";
+import adminLogo from "../../Uploads/adminLogo.png";
+
+import ecommerceLogo from "../../Uploads/ecommercelogo.png";
 function Projects() {
   const [letterClass, setLetterClass] = useState("text-animate");
   const [selected, setSelected] = useState(0);
@@ -27,32 +29,43 @@ function Projects() {
   };
   const data = [
     {
-      projectName: "midnight madira",
-      description: "ecommerce project developed for ab company",
-      features: ["feature 1", "featire 2", "feature 3"],
-      img: madiraImage,
-      siteLikn: "https://www.linkedin.com/in/pabin-limbu-b47ab4212",
+      projectName: "Ecommerce client",
+      description: "Ecommerce client project 2023",
+      features: [
+        "CRUD operation",
+        "MONGO DB",
+        "NEXT.JS",
+        "STYLED COMPONENT",
+        "STRIPE PAYEMNT GATEWAY",
+      ],
+      img: ecommerceLogo,
+      siteLikn: "https://nextecommerce-front.vercel.app/",
+    },
+    {
+      projectName: "Ecommerce ADMIN",
+      description: "Ecommerce ADMIN project 2023",
+      features: [
+        "CRUD operation",
+        "MONGO DB",
+        "ADD EDIT DELETE ITEM",
+        "NEXT AUTH AUTHENTICATION",
+        "TAILWIND CSS",
+      ],
+      img: adminLogo,
+      siteLikn: "https://nextecommerce-admin.vercel.app/",
     },
     {
       projectName: "Star wars",
-      description: "abcd",
-      features: ["feature 1", "featire 2", "feature 3"],
+      description: "A simple game stop the alien invasion",
+      features: [
+        "CALCULATE USER PICKED NUMBER",
+        "TRACK USER SELECTION",
+        "COUNTDOWN",
+        "REACT",
+        "reSPONSIVE DESIGN",
+      ],
       img: starWarLogo,
       siteLikn: "https://limbustarwar.netlify.app/",
-    },
-    {
-      projectName: "todo final",
-      description: "abcd",
-      features: ["feature 1", "featire 2", "feature 3"],
-      img: "../../../Uploads/starwar.png",
-      siteLikn: "https://www.linkedin.com/in/pabin-limbu-b47ab4212",
-    },
-    {
-      projectName: "course link",
-      description: "abcd",
-      features: ["feature 1", "featire 2", "feature 3"],
-      img: "../../../Uploads/starwar.png",
-      siteLikn: "https://www.linkedin.com/in/pabin-limbu-b47ab4212",
     },
   ];
 
@@ -67,9 +80,7 @@ function Projects() {
               idx={15}
             />
           </h1>
-          <p>
-        All this projects are for my practice project.
-          </p>
+          <p>All this projects are for my practice project.</p>
         </div>
 
         <div className="wrapper">
