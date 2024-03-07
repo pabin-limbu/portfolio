@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import CardProject from "./CardProject";
 import starWarLogo from "../../Uploads/starwar.jpg";
 import adminLogo from "../../Uploads/adminLogo.png";
+import eventLogo from "../../Uploads/event.jpg";
 
 import ecommerceLogo from "../../Uploads/ecommercelogo.png";
 function Projects() {
@@ -67,6 +68,18 @@ function Projects() {
       img: starWarLogo,
       siteLikn: "https://limbustarwar.netlify.app/",
     },
+    {
+      projectName: "View Events",
+      description: "Event posts around the world",
+      features: [
+        "NEXT.JS PAGE ROUTER , REACT",
+        "REGEX",
+        "SASS CSS",
+        "RESPONSIVE DESIGN",
+      ],
+      img: eventLogo,
+      siteLikn: "https://eventapp-pabin-m782xfesg-pabin-limbu.vercel.app/",
+    },
   ];
 
   return (
@@ -105,14 +118,3 @@ function Projects() {
 }
 
 export default Projects;
-{
-  /* <div className="item" key={i}>
-                  <div className="title" onClick={() => toggle(i)}>
-                    <h2>{item.question}</h2>
-                    <span>{selected === i ? "-" : "+"}</span>
-                  </div>
-                  <div className={selected === i ? "content show" : "content"}>
-                    {item.answer}
-                  </div>
-                </div> */
-}
