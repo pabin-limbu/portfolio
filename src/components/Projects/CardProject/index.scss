@@ -45,12 +45,13 @@
 .projectDetails {
   margin-left: 20px;
   padding: 20px;
+
   ul {
     text-decoration: none;
-    list-style: none;
+    list-style: circle;
 
     li {
-      font-weight: bold;
+      font-weight: 400;
     }
   }
 }
@@ -76,7 +77,6 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
- 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */

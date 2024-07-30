@@ -14,12 +14,12 @@ function Sidebar() {
       </Link>
 
       <nav>
-        <NavLink
+        {/* <NavLink
           className={(navData) => (navData.isActive ? "active" : "")}
           to="/"
         >
           <FaHome color="#FF9671" />
-        </NavLink>
+        </NavLink> */}
         <NavLink
           className={(navData) =>
             navData.isActive ? "about-link active" : "about-link"

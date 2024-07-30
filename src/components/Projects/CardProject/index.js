@@ -28,8 +28,8 @@ function CardProject(props) {
           />
         </div>
         <div className="projectDetails">
-          <p> {item.description}</p>
-          <h5>{item.feature}</h5>
+          <h3> {item.description}</h3>
+
           <ul>
             {item.features.map((feature, index) => (
               <li>{feature}</li>

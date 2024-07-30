@@ -6,10 +6,10 @@ import Loader from "react-loaders";
 import { useEffect } from "react";
 import CardProject from "./CardProject";
 import starWarLogo from "../../Uploads/starwar.jpg";
-import adminLogo from "../../Uploads/adminLogo.png";
+import adminLogo from "../../Uploads/foodMe.png";
 import eventLogo from "../../Uploads/event.jpg";
 
-import ecommerceLogo from "../../Uploads/ecommercelogo.png";
+import ecommerceLogo from "../../Uploads/Vl.png";
 function Projects() {
   const [letterClass, setLetterClass] = useState("text-animate");
   const [selected, setSelected] = useState(0);
@@ -30,30 +30,35 @@ function Projects() {
   };
   const data = [
     {
-      projectName: "Ecommerce client",
-      description: "Ecommerce client project 2023",
+      projectName: "Vintage Lens",
+      description: "Ecommerce shop",
       features: [
-        "CRUD operation",
-        "MONGO DB",
-        "NEXT.JS",
-        "STYLED COMPONENT",
-        "STRIPE PAYEMNT GATEWAY",
+        "Buy variety of camera and Lenses",
+        "View Details and Specifications of cameras",
+        "View Stories",
+        "Add to cart for checkout",
+        "Frontend: Next.js , Styled Components",
+        "Backend: Express.js , Axios, MongoDb",
+        "Authentication: NextAuth ",
+        "Payment Gateway: Stripe online payment",
       ],
       img: ecommerceLogo,
       siteLikn: "https://nextecommerce-front.vercel.app/",
     },
     {
-      projectName: "Ecommerce ADMIN",
-      description: "Ecommerce ADMIN project 2023",
+      projectName: "Food Me",
+      description: "Instant Food order",
       features: [
-        "CRUD operation",
-        "MONGO DB",
-        "ADD EDIT DELETE ITEM",
-        "NEXT AUTH AUTHENTICATION",
-        "TAILWIND CSS",
+        "Search reastaurant by city.",
+        "Login to save user details.",
+        "Search restaurant by type of food. ",
+        "Create your own restaurant.",
+        "View status of food delevery",
+        "Frontend : React.js, Tailwind CSS ",
+        "Backend : Express.js and MongoDb database ",
       ],
       img: adminLogo,
-      siteLikn: "https://nextecommerce-admin.vercel.app/",
+      siteLikn: "https://react-sewa-frontend.onrender.com",
     },
     {
       projectName: "Star wars",
