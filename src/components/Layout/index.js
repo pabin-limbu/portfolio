@@ -5,7 +5,7 @@ import "./index.scss";
 function Layout() {
   return (
     <div>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="page">
         {/* The use of outlet in parent element allow us to render the nested route element. */}
         <Outlet />

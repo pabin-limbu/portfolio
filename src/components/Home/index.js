@@ -1,12 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import AnimatedLetters from "../UItemplate/AnimatedLetters";
 import "./index.scss";
 import Logo from "./Logo";
-import Loader from "react-loaders";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { motion, useInView } from "framer-motion";
+import computerImage from "../../Uploads/computer.jpg";
+import Sidebar from "../Sidebar";
+import Contact from "../Contact";
+
 function Home() {
   const [letterClass, setLetterClass] = useState("text-animate");
+
+  const ref = useRef(null);
+  const refTwo = useRef(null);
+  const isInView = useInView(ref);
+  const isInViewTwo = useInView(refTwo);
+
   const nameArray = ["p", "a", "b", "i", "n", "  ", "l", "i", "m", "b", "u"];
 
   useEffect(() => {
@@ -15,10 +25,27 @@ function Home() {
     }, 4000);
   }, []);
 
+  useEffect(() => {
+    console.log(isInView);
+  }, [isInView]);
+
   return (
     <>
+      <div className="loader-logo">
+        <Logo />
+      </div>
+
       <div className="container home-page">
-        <div className="typography-zone">
+        <div
+          className="typography-zone"
+          style={{
+            backgroundImage: `url(${computerImage})`,
+            backgroundSize: "cover",
+            height: "550px",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Sidebar />
           <h1>
             <span className={`${letterClass}`}>H</span>
             <span className={`${letterClass} _12`}>E</span>
@@ -36,15 +63,83 @@ function Home() {
             />
           </h1>
           <h2>
-            Frontend developer / Backend developer / Javascript / React /
-            React-native
+            Fullstack developer / Javascript / React / Next / React-native
           </h2>
-          <Link to="/contact" className="flat-button">
-            CONTACT ME
-          </Link>
         </div>
 
-        <div className="social-link">
+
+
+
+        
+        <div className="quote-container">
+          <p>
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+            quo natus praesentium unde dignissimos sapiente voluptatem tenetur
+            deleniti vel voluptate?"
+          </p>
+        </div>
+
+        <div className="recent-project-container">
+          <div className="recent-project-wrapper">
+            <motion.div className="project-image-container-one">
+              <img
+                className="img-foodme"
+                src={require("../../Uploads/foodMe.png")}
+                alt="foodme"
+              />
+            </motion.div>
+
+            <motion.div
+              className="card-foodme"
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: isInView ? 0 : 10, opacity: isInView ? 1 : 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2>Foodme</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
+                officiis architecto asperiores hic quaerat ratione molestias
+                vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Esse officiis architecto asperiores hic
+              </p>
+            </motion.div>
+          </div>
+          <div className="spotter" ref={ref}></div>
+          <div className="recent-project-wrapper">
+            <motion.div className="project-image-container-two">
+              <img
+                className="img-vintagelens"
+                src={require("../../Uploads/Vl.png")}
+                alt=""
+              />
+            </motion.div>
+            <motion.div
+              className="card-vintagelens"
+              initial={{ y: -30, opacity: 0 }}
+              animate={{
+                y: isInViewTwo ? 0 : 30,
+                opacity: isInViewTwo ? 1 : 0,
+              }}
+              transition={{ duration: 0.7 }}
+            >
+              <h2>Vintage Lens</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
+                officiis architecto asperiores hic quaerat ratione molestias
+                vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Esse officiis architecto asperiores hic
+              </p>
+            </motion.div>
+          </div>
+          <div className="spotterTwo" ref={refTwo}></div>
+        </div>
+
+        <div className="contact-container">
+          <Contact />
+        </div>
+
+        <div className="social-container">
+          <h1>Connect with me</h1>
           <ul>
             <li>
               <a
@@ -52,7 +147,7 @@ function Home() {
                 href="https://www.facebook.com/changsu.pabin"
                 rel="noreferrer"
               >
-                <FaFacebookSquare color="white" />
+                <FaFacebookSquare color="black" />
               </a>
             </li>
             <li>
@@ -61,14 +156,11 @@ function Home() {
                 href="https://www.linkedin.com/in/pabin-limbu-b47ab4212"
                 rel="noreferrer"
               >
-                <FaLinkedin color="white" />
+                <FaLinkedin color="black" />
               </a>
             </li>
           </ul>
         </div>
-      </div>
-      <div className="loader-logo">
-        <Logo />
       </div>
     </>
   );

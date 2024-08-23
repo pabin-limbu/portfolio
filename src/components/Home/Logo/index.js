@@ -3,7 +3,7 @@ import "./index.scss";
 
 function Logo() {
   return (
-    <div className="logo-container">
+    <div className="logo-container-pabin">
       <svg
         id="pSvg"
         width="119"
@@ -24,7 +24,7 @@ function Logo() {
         />
         <path
           d="M8.48881 153.41L8.48881 147.762L117.81 49.0202C122.616 83.5756 111.328 110.719 50.6186 110.719V153.41H8.48881Z"
-          // fill="#FF9671"
+          fill="none"
         />
       </svg>
     </div>
