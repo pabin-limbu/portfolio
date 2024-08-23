@@ -69,7 +69,7 @@ function Home() {
             <span className={`${letterClass} _12`}>R</span>
             <span className={`${letterClass} _13`}>N</span>
             <br />
-            <span className={`${letterClass} _14`}>E</span>
+            <span className={`${letterClass} _14`}>I</span>
             <span className={`${letterClass} _15`}>M</span>
             <span className={`${letterClass} _16`}>A</span>
             <span className={`${letterClass} _17`}>G</span>
