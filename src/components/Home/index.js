@@ -17,7 +17,24 @@ function Home() {
   const isInView = useInView(ref);
   const isInViewTwo = useInView(refTwo);
 
-  const nameArray = ["p", "a", "b", "i", "n", "  ", "l", "i", "m", "b", "u"];
+  const nameArray = [
+    "i",
+    "n",
+    " ",
+    "t",
+    "o",
+    " ",
+    "e",
+    "x",
+    "p",
+    "e",
+    "r",
+    "i",
+    "e",
+    "n",
+    "c",
+    "e",
+  ];
 
   useEffect(() => {
     setTimeout(() => {
@@ -47,19 +64,28 @@ function Home() {
         >
           <Sidebar />
           <h1>
-            <span className={`${letterClass}`}>H</span>
-            <span className={`${letterClass} _12`}>E</span>
-            <span className={`${letterClass} _13`}>L</span>
-            <span className={`${letterClass} _14`}>L</span>
-            <span className={`${letterClass} _15`}>O</span>
+            <span className={`${letterClass}`}>T</span>
+            <span className={`${letterClass} _11`}>U</span>
+            <span className={`${letterClass} _12`}>R</span>
+            <span className={`${letterClass} _13`}>N</span>
             <br />
-            <span className={`${letterClass} _16`}>I</span>
-            <span className={`${letterClass} _17`}>'M</span>
+            <span className={`${letterClass} _14`}>E</span>
+            <span className={`${letterClass} _15`}>M</span>
+            <span className={`${letterClass} _16`}>A</span>
+            <span className={`${letterClass} _17`}>G</span>
+            <span className={`${letterClass} _18`}>I</span>
+            <span className={`${letterClass} _19`}>N</span>
+            <span className={`${letterClass} _20`}>A</span>
+            <span className={`${letterClass} _21`}>T</span>
+            <span className={`${letterClass} _22`}>I</span>
+            <span className={`${letterClass} _23`}>O</span>
+            <span className={`${letterClass} _24`}>N</span>
+
             <br />
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
-              idx={18}
+              idx={25}
             />
           </h1>
           <h2>
@@ -67,10 +93,6 @@ function Home() {
           </h2>
         </div>
 
-
-
-
-        
         <div className="quote-container">
           <p>
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
@@ -132,6 +154,9 @@ function Home() {
             </motion.div>
           </div>
           <div className="spotterTwo" ref={refTwo}></div>
+          <div className="">
+            <p>More </p>
+          </div>
         </div>
 
         <div className="contact-container">

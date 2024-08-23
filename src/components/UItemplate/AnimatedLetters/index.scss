@@ -1,6 +1,6 @@
 .text-animate {
   display: inline-block;
-  font-size: 1em;
+  font-size: 0.5em;
   opacity: 1;
   animation: bounceIn 1s 1s;
   animation-fill-mode: forwards;
@@ -23,7 +23,7 @@
   }
 }
 
-@for $i from 1 through 35 {
+@for $i from 1 through 40 {
   .text-animate._#{$i} {
     animation-delay: #{$i/10}s;
   }
@@ -35,7 +35,6 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -46,7 +45,6 @@
 @media only screen and (min-width: 992px) {
   .text-animate-hover {
     font-size: 1em;
- 
   }
 }
 
