@@ -6,7 +6,21 @@
 
 .home-page {
   width: 100%;
-  height: 10%;
+  // height: 10%;
+
+  .projectTitle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .myProject {
+      padding-bottom: 10px;
+      width: 70%;
+      text-align: center;
+      border-bottom: 1.5px solid white;
+      font-family: cursive;
+    }
+  }
 
   .typography-zone {
     text-align: center;
@@ -54,6 +68,7 @@
     width: 100%;
     height: 300px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;

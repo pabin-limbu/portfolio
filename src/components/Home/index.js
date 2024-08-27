@@ -13,6 +13,50 @@ import Contact from "../Contact";
 import ProjectCard from "../ProjectCard";
 import ExampleDiv from "../ExampleDiv";
 
+const projectsRecent = [
+  {
+    title: "FoodMe",
+    subTitle: "Order your favourite food",
+    description:
+      "Your ultimate destination for discovering and ordering from the best restaurants in your city. Whether you’re a food lover looking to satisfy your cravings or an entrepreneur wanting to manage your own restaurant, we’ve got you covered. Enjoy seamless online payments and real-time order tracking for a hassle-free experience.",
+    webSiteLink: "https://react-sewa-frontend.onrender.com",
+    imgLink: require("../../Uploads/foodMe.png"),
+    backgroundColor: "#217039",
+  },
+  {
+    title: "Vintage Lens",
+    subTitle: "Capture timeless moments with a touch of nostalgia.",
+    description:
+      "Your premier destination for a wide variety of meticulously preserved vintage camera lenses and accessories. Experience the charm of classic photography with our carefully curated collection, all available for purchase through secure online payments.",
+    webSiteLink: "https://nextecommerce-front.vercel.app/",
+    imgLink: require("../../Uploads/Vl.png"),
+    backgroundColor: "#161314",
+  },
+];
+
+const projectsOther = [
+  {
+    title: "Star Wars",
+    subTitle:
+      "Defend Earth from alien invasions with the power of addition and reflex",
+    description:
+      "Challenge your math skills to defend Earth from alien invasions! Randomly generated spaceships require precise number matching or addition to stop the threat. Complete each wave within the given time to save the planet. Are you ready to add up to the challenge?",
+    webSiteLink: "https://limbustarwar.netlify.app/",
+    imgLink: require("../../Uploads/starwar.jpg"),
+    backgroundColor: "#231F20",
+  },
+  {
+    title: "Event Finder",
+    subTitle:
+      "Discover global events and stay updated! Subscribe to our newsletter for exclusive booking opportunities.",
+    description:
+      "Your go-to platform for discovering a wide array of events happening around the world. From concerts and festivals to conferences and exhibitions, stay informed about the latest happenings. Subscribe to our newsletter for exclusive booking opportunities and never miss out on an exciting event again",
+    webSiteLink: "https://github.com/pabin-limbu/eventApp",
+    imgLink: require("../../Uploads/event.jpg"),
+    backgroundColor: "#0A0A0A",
+  },
+];
+
 function Home() {
   const [letterClass, setLetterClass] = useState("text-animate");
   const [isVisible, setIsVisible] = useState(false);
@@ -46,7 +90,7 @@ function Home() {
 
   useEffect(() => {
     if (cardSection.current) {
-      setHeight(isVisible ? cardSection.current.scrollHeight : 0);
+      setHeight(isVisible ? cardSection.current.scrollHeight + 30 : 0);
     }
     console.log(height);
     // console.log(cardSection.current.scrollHeight);
@@ -103,58 +147,32 @@ function Home() {
           </h2>
         </div>
         <div className="quote-container">
+          <p>12/12/2024</p>
           <p>
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            quo natus praesentium unde dignissimos sapiente voluptatem tenetur
-            deleniti vel voluptate?"
+            Hi i am Pabin Limbu, A motivated Full Stack Developer exploring
+            Cloud Native Technologies and Framework to build and deliver
+            high-quality quality robust/ reliable and scalable solutions.
+            currently looking for new opportunities
           </p>
         </div>
 
         <motion.div ref={cardSection}>
-          <ProjectCard
-            imageLink={require("../../Uploads/foodMe.png")}
-            title={"Foodme"}
-            description={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
-            }
-            visitLink={"/"}
-            backgroundColor={"#217039"}
-          />
-          <ProjectCard
-            imageLink={require("../../Uploads/Vl.png")}
-            title={"Vintage Lens"}
-            description={
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
-            }
-            visitLink={"/"}
-            backgroundColor={"#161314"}
-          />
+          <div className="projectTitle-container">
+            <h2 className="myProject">projects</h2>
+          </div>
+          {projectsRecent.map((project, index) => {
+            return <ProjectCard key={index} project={project} />;
+          })}
+
           <motion.div
             initial={{ height: 0 }}
             animate={{ height: isVisible ? height : 0 }}
             style={{ overflow: "hidden" }}
             transition={{ duration: 0.5 }}
           >
-            <>
-              <ProjectCard
-                imageLink={require("../../Uploads/Vl.png")}
-                title={"Events App"}
-                description={
-                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
-                }
-                visitLink={"/"}
-                backgroundColor={"#161314"}
-              />
-              <ProjectCard
-                imageLink={require("../../Uploads/Vl.png")}
-                title={"Star wars"}
-                description={
-                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
-                }
-                visitLink={"/"}
-                backgroundColor={"#161314"}
-              />
-            </>
+            {projectsOther.map((project, index) => {
+              return <ProjectCard project={project} />;
+            })}
           </motion.div>
           <div className="btn-viewmore-container">
             <button

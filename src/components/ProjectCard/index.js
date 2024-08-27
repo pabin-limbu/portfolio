@@ -9,6 +9,8 @@ function ProjectCard({
   description,
   visitLink,
   backgroundColor,
+  project,
+  name,
 }) {
   const [isViewed, setIsViewed] = useState(false);
   const ref = useRef(null);
@@ -20,15 +22,22 @@ function ProjectCard({
     }
   }, [isInView]);
 
+  console.log(project);
+  console.log(name);
+
   return (
-    <div>
+    <div style={{}}>
       {" "}
       <div className="recent-project-wrapper">
         <motion.div
           className="project-image-container-one"
-          style={{ backgroundColor: backgroundColor }}
+          style={{ backgroundColor: project && project.backgroundColor }}
         >
-          <img className="img-foodme" src={imageLink} alt="foodme" />
+          <img
+            className="img-foodme"
+            src={project && project.imgLink}
+            alt="foodme"
+          />
         </motion.div>
 
         <motion.div
@@ -37,12 +46,17 @@ function ProjectCard({
           animate={{ y: isViewed ? 0 : 10, opacity: isViewed ? 1 : 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <Link to={visitLink}>Visit site</Link>
+          <h2>{project && project.title}</h2>
+          <h3>{project && project.subTitle}</h3>
+          <p>{project && project.description}</p>
+          <Link to={""}>Visit site</Link>
         </motion.div>
       </div>
-      <div className="spotter" ref={ref}></div>
+      <div
+        className="spotter"
+        ref={ref}
+        style={{ paddingBottom: "20px" }}
+      ></div>
     </div>
   );
 }
