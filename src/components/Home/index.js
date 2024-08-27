@@ -4,18 +4,20 @@ import AnimatedLetters from "../UItemplate/AnimatedLetters";
 import "./index.scss";
 import Logo from "./Logo";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
-import { motion, useInView } from "framer-motion";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+
+import { delay, motion, useInView, AnimatePresence } from "framer-motion";
 import computerImage from "../../Uploads/computer.jpg";
 import Sidebar from "../Sidebar";
 import Contact from "../Contact";
+import ProjectCard from "../ProjectCard";
+import ExampleDiv from "../ExampleDiv";
 
 function Home() {
   const [letterClass, setLetterClass] = useState("text-animate");
-
-  const ref = useRef(null);
-  const refTwo = useRef(null);
-  const isInView = useInView(ref);
-  const isInViewTwo = useInView(refTwo);
+  const [isVisible, setIsVisible] = useState(false);
+  const [height, setHeight] = useState(0);
+  const cardSection = useRef(null);
 
   const nameArray = [
     "i",
@@ -43,8 +45,16 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    console.log(isInView);
-  }, [isInView]);
+    if (cardSection.current) {
+      setHeight(isVisible ? cardSection.current.scrollHeight : 0);
+    }
+    console.log(height);
+    // console.log(cardSection.current.scrollHeight);
+  }, [isVisible]);
+
+  const handleScroll = () => {
+    cardSection.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -92,7 +102,6 @@ function Home() {
             Fullstack developer / Javascript / React / Next / React-native
           </h2>
         </div>
-
         <div className="quote-container">
           <p>
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
@@ -101,63 +110,67 @@ function Home() {
           </p>
         </div>
 
-        <div className="recent-project-container">
-          <div className="recent-project-wrapper">
-            <motion.div className="project-image-container-one">
-              <img
-                className="img-foodme"
-                src={require("../../Uploads/foodMe.png")}
-                alt="foodme"
+        <motion.div ref={cardSection}>
+          <ProjectCard
+            imageLink={require("../../Uploads/foodMe.png")}
+            title={"Foodme"}
+            description={
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
+            }
+            visitLink={"/"}
+            backgroundColor={"#217039"}
+          />
+          <ProjectCard
+            imageLink={require("../../Uploads/Vl.png")}
+            title={"Vintage Lens"}
+            description={
+              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
+            }
+            visitLink={"/"}
+            backgroundColor={"#161314"}
+          />
+          <motion.div
+            initial={{ height: 0 }}
+            animate={{ height: isVisible ? height : 0 }}
+            style={{ overflow: "hidden" }}
+            transition={{ duration: 0.5 }}
+          >
+            <>
+              <ProjectCard
+                imageLink={require("../../Uploads/Vl.png")}
+                title={"Events App"}
+                description={
+                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
+                }
+                visitLink={"/"}
+                backgroundColor={"#161314"}
               />
-            </motion.div>
-
-            <motion.div
-              className="card-foodme"
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: isInView ? 0 : 10, opacity: isInView ? 1 : 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2>Foodme</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-                officiis architecto asperiores hic quaerat ratione molestias
-                vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Esse officiis architecto asperiores hic
-              </p>
-            </motion.div>
-          </div>
-          <div className="spotter" ref={ref}></div>
-          <div className="recent-project-wrapper">
-            <motion.div className="project-image-container-two">
-              <img
-                className="img-vintagelens"
-                src={require("../../Uploads/Vl.png")}
-                alt=""
+              <ProjectCard
+                imageLink={require("../../Uploads/Vl.png")}
+                title={"Star wars"}
+                description={
+                  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic quaerat ratione molestias vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse officiis architecto asperiores hic"
+                }
+                visitLink={"/"}
+                backgroundColor={"#161314"}
               />
-            </motion.div>
-            <motion.div
-              className="card-vintagelens"
-              initial={{ y: -30, opacity: 0 }}
-              animate={{
-                y: isInViewTwo ? 0 : 30,
-                opacity: isInViewTwo ? 1 : 0,
+            </>
+          </motion.div>
+          <div className="btn-viewmore-container">
+            <button
+              className="btn-viewmore"
+              onClick={() => {
+                setIsVisible(!isVisible);
+                if (isVisible) {
+                  handleScroll();
+                }
               }}
-              transition={{ duration: 0.7 }}
             >
-              <h2>Vintage Lens</h2>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse
-                officiis architecto asperiores hic quaerat ratione molestias
-                vitae velit dolor quia? Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Esse officiis architecto asperiores hic
-              </p>
-            </motion.div>
+              {!isVisible ? "view more" : "view less"}
+              {!isVisible ? <FaArrowDown /> : <FaArrowUp />}
+            </button>
           </div>
-          <div className="spotterTwo" ref={refTwo}></div>
-          <div className="">
-            <p>More </p>
-          </div>
-        </div>
+        </motion.div>
 
         <div className="contact-container">
           <Contact />

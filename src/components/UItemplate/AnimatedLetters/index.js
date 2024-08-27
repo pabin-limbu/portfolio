@@ -4,8 +4,8 @@ import "./index.scss";
 function AnimatedLetters({ letterClass, strArray, idx }) {
   //params:class to be applied, letter array, index starting point.
 
-  console.log(strArray);
-  console.log(idx);
+  // console.log(strArray);
+  // console.log(idx);
 
   return (
     <span>
