@@ -6,7 +6,6 @@
 
 .home-page {
   width: 100%;
-  // height: 10%;
 
   .projectTitle-container {
     display: flex;
@@ -18,7 +17,8 @@
       width: 70%;
       text-align: center;
       border-bottom: 1.5px solid white;
-      font-family: cursive;
+      font-family: Helvetica Neue;
+      padding-top: 10px;
     }
   }
 
@@ -69,16 +69,27 @@
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     padding: 20px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     position: relative;
+    gap: 20px;
     top: -20px;
-
+    .currentDate {
+      align-self: self-start;
+      font-size: small;
+    }
     p {
       font-size: 18px;
+      font-family: Helvetica Neue;
+      color: white;
+      padding: 10px;
+    }
+    .myName {
+      align-self: flex-end;
+      text-align: end;
     }
   }
 
@@ -87,7 +98,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
+    padding-top: 5px;
 
     .btn-viewmore {
       padding: 5px 20px;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import AnimatedLetters from "../UItemplate/AnimatedLetters";
 import "./index.scss";
 import Logo from "./Logo";
@@ -62,6 +62,18 @@ function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const [height, setHeight] = useState(0);
   const cardSection = useRef(null);
+  const [currentDate, setCurrentDate] = useState("");
+
+  const aboutSec = useRef(null);
+  const contactSec = useRef(null);
+
+  useEffect(() => {
+    const today = new Date();
+    const date = `${today.getFullYear()}-${
+      today.getMonth() + 1
+    }-${today.getDate()}`;
+    setCurrentDate(date);
+  }, []);
 
   const nameArray = [
     "i",
@@ -90,14 +102,23 @@ function Home() {
 
   useEffect(() => {
     if (cardSection.current) {
-      setHeight(isVisible ? cardSection.current.scrollHeight + 30 : 0);
+      setHeight(isVisible ? cardSection.current.scrollHeight : 0);
     }
-    console.log(height);
-    // console.log(cardSection.current.scrollHeight);
   }, [isVisible]);
 
   const handleScroll = () => {
     cardSection.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleNavClick = (value) => {
+    console.log(value);
+    if (value === "about") {
+      aboutSec.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (value === "project") {
+      cardSection.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (value === "contact") {
+      contactSec.current?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -116,7 +137,7 @@ function Home() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <Sidebar />
+          <Sidebar handleNavClick={handleNavClick} />
           <h1>
             <span className={`${letterClass}`}>T</span>
             <span className={`${letterClass} _11`}>U</span>
@@ -146,19 +167,19 @@ function Home() {
             Fullstack developer / Javascript / React / Next / React-native
           </h2>
         </div>
-        <div className="quote-container">
-          <p>12/12/2024</p>
+        <div ref={aboutSec} className="quote-container">
+          <p className="currentDate">{currentDate}</p>
           <p>
-            Hi i am Pabin Limbu, A motivated Full Stack Developer exploring
-            Cloud Native Technologies and Framework to build and deliver
-            high-quality quality robust/ reliable and scalable solutions.
-            currently looking for new opportunities
+            Hi, i am a Full Stack Developer exploring Cloud Native Technologies
+            and Framework to build and deliver high-quality quality robust,
+            reliable and scalable solutions. Looking for new opportunities.
           </p>
+          <p className="myName">Pabin Limbu</p>
         </div>
 
         <motion.div ref={cardSection}>
           <div className="projectTitle-container">
-            <h2 className="myProject">projects</h2>
+            <h2 className="myProject">My Projects</h2>
           </div>
           {projectsRecent.map((project, index) => {
             return <ProjectCard key={index} project={project} />;
@@ -171,7 +192,7 @@ function Home() {
             transition={{ duration: 0.5 }}
           >
             {projectsOther.map((project, index) => {
-              return <ProjectCard project={project} />;
+              return <ProjectCard key={index} project={project} />;
             })}
           </motion.div>
           <div className="btn-viewmore-container">
@@ -190,7 +211,7 @@ function Home() {
           </div>
         </motion.div>
 
-        <div className="contact-container">
+        <div ref={contactSec} className="contact-container">
           <Contact />
         </div>
 

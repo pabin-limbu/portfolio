@@ -2,16 +2,38 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
     <div className="nav-bar">
       <div className="logo">
-        <p>pabin Limbu</p>
+        <p>Pabin Limbu</p>
       </div>
       <div className="header-links">
-        <Link href="">projects</Link>
-        <Link href="">About</Link>
-        <Link href="">Contact</Link>
+        <Link
+          onClick={(e) => {
+            props.handleNavClick("about");
+          }}
+          href=""
+        >
+          About
+        </Link>
+        <Link
+          onClick={(e) => {
+            props.handleNavClick("project");
+          }}
+          href=""
+        >
+          project
+        </Link>
+
+        <Link
+          onClick={(e) => {
+            props.handleNavClick("contact");
+          }}
+          href=""
+        >
+          Contact
+        </Link>
       </div>
     </div>
   );

@@ -13,8 +13,8 @@ function Logo() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M6.48887 51.0726L6.48881 137.377L115.452 40.7267C115.452 21.6072 98.6289 8.8714 54.9904 8.8714L6.48887 51.0726ZM45.1924 41.1416V75.7645H67.45C85.1796 75.7645 84.9992 41.1416 67.45 41.1416H45.1924Z"
           fill="none"
         />

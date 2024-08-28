@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./index.scss";
 import { motion, useInView } from "framer-motion";
-import { Link } from "react-router-dom";
 
 function ProjectCard({
   imageLink,
@@ -49,13 +48,19 @@ function ProjectCard({
           <h2>{project && project.title}</h2>
           <h3>{project && project.subTitle}</h3>
           <p>{project && project.description}</p>
-          <Link to={""}>Visit site</Link>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={project && project.webSiteLink}
+          >
+            Visit site
+          </a>
         </motion.div>
       </div>
       <div
         className="spotter"
         ref={ref}
-        style={{ paddingBottom: "20px" }}
+        style={{ paddingBottom: "5px" }}
       ></div>
     </div>
   );
