@@ -1,28 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+// import { Link, NavLink } from "react-router-dom";
 import AnimatedLetters from "../UItemplate/AnimatedLetters";
 import "./index.scss";
 import Logo from "./Logo";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
-import { delay, motion, useInView, AnimatePresence } from "framer-motion";
+// import { delay, motion, useInView, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import computerImage from "../../Uploads/computer.jpg";
 import Sidebar from "../Sidebar";
 import Contact from "../Contact";
 import ProjectCard from "../ProjectCard";
-import ExampleDiv from "../ExampleDiv";
+// import ExampleDiv from "../ExampleDiv";
 
 const projectsRecent = [
-  {
-    title: "FoodMe",
-    subTitle: "Order your favourite food",
-    description:
-      "Your ultimate destination for discovering and ordering from the best restaurants in your city. Whether you’re a food lover looking to satisfy your cravings or an entrepreneur wanting to manage your own restaurant, we’ve got you covered. Enjoy seamless online payments and real-time order tracking for a hassle-free experience.",
-    webSiteLink: "https://react-sewa-frontend.onrender.com",
-    imgLink: require("../../Uploads/foodMe.png"),
-    backgroundColor: "#217039",
-  },
   {
     title: "Vintage Lens",
     subTitle: "Capture timeless moments with a touch of nostalgia.",
@@ -31,6 +23,15 @@ const projectsRecent = [
     webSiteLink: "https://nextecommerce-front.vercel.app/",
     imgLink: require("../../Uploads/Vl.png"),
     backgroundColor: "#161314",
+  },
+  {
+    title: "FoodMe",
+    subTitle: "Order your favourite food",
+    description:
+      "Your ultimate destination for discovering and ordering from the best restaurants in your city. Whether you’re a food lover looking to satisfy your cravings or an entrepreneur wanting to manage your own restaurant, we’ve got you covered. Enjoy seamless online payments and real-time order tracking for a hassle-free experience.",
+    webSiteLink: "https://react-sewa-frontend.onrender.com",
+    imgLink: require("../../Uploads/foodMe.png"),
+    backgroundColor: "#217039",
   },
 ];
 
