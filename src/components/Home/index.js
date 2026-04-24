@@ -16,6 +16,15 @@ import ProjectCard from "../ProjectCard";
 
 const projectsRecent = [
   {
+    title: "Job Appliaction Tracker",
+    subTitle: "Easy to track the state of your job application",
+    description:
+      "Application designed to bring clarity and strategy to the modern job hunt. It serves as a centralized Command Center for your career transition, replacing manual note-taking with a streamlined, digital workflow. Instead of wondering 'who did I hear back from?', you have a visual, real-time map of your entire professional pipeline.",
+    webSiteLink: "https://job-application-tracker-psi-five.vercel.app/",
+    imgLink: require("../../Uploads/JAT.png"),
+    backgroundColor: "#C44545",
+  },
+  {
     title: "Vintage Lens",
     subTitle: "Capture timeless moments with a touch of nostalgia.",
     description:
