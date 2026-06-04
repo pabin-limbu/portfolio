@@ -20,7 +20,7 @@ const projectsRecent = [
     subTitle: "AI powered Text to audio voice generation tool.",
     description:
       "Upcoming Project- This platform is a high-performance generative AI ecosystem specializing in ultra-realistic voice synthesis. It utilizes advanced neural networks to convert text into emotionally resonant speech, offering instant voice cloning and multilingual dubbing. Designed for creators and developers, it delivers scalable, human-like audio for games, audiobooks, and global content localization.",
-    webSiteLink: "https://nibap-production.up.railway.app/",
+    webSiteLink: "https://nibap.vercel.app/",
     imgLink: "/logo1.svg",
     backgroundColor: "#328D9B",
   },
